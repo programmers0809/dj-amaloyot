@@ -55,8 +55,8 @@
         <div class="left_content">
           <div class="single_post_content">
             <h2><span>O'zbekston</span></h2>
-            <div class="single_post_content_left">
-  <ul class="business_catgnav wow fadeInDown">
+          <div class="single_post_content_left">
+            <ul class="business_catgnav wow fadeInDown">
               {% for uzb_news in uzb_news_list %}
               {% if forloop.first  %}
               <li>
@@ -66,9 +66,9 @@
                     <span class="overlay"></span> 
                   </a>
                   <figcaption> 
-                    <a href="single_page.html">{{uzb_news.title | truncatewords:3}}</a> 
+                    <a href="single_page.html">{{uzb_news.title | truncatewords:2}}</a> 
                   </figcaption>
-                  <p>{{uzb_news.body| truncatewords:15}}</p>
+                  <p>{{uzb_news.body| truncatewords:2}}</p>
                 </figure>
               </li>
               {% endif %}
@@ -86,7 +86,7 @@
                     <img alt="" src="{{ uzb_news.image.url }}"> 
                   </a>
                   <div class="media-body"> 
-                    <a href="pages/single_page.html" class="catg_title">{{uzb_news.title | truncatewords:7}}</a> 
+                    <a href="pages/single_page.html" class="catg_title">{{uzb_news.title | truncatewords:3}}</a> 
                   </div>
                 </div>
               </li>
@@ -137,8 +137,8 @@
                
                   <li>
                     <figure class="bsbig_fig wow fadeInDown"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="jahon_news.imge.url"> <span class="overlay"></span> </a>
-                      <figcaption> <a href="pages/single_page.html">{{jahon_news.title| truncatewords:7}}</a> </figcaption>
-                      <p>{{jahon_news.body| truncatewords:7}}</p>
+                      <figcaption> <a href="pages/single_page.html">{{jahon_news.title| truncatewords:3}}</a> </figcaption>
+                      <p>{{jahon_news.body| truncatewords:3}}</p>
                     </figure>
                   </li>
                    {% endif %}  
@@ -200,9 +200,7 @@
       <div class="col-lg-4 col-md-4 col-sm-4">
         <aside class="right_content">
           <div class="single_sidebar">
-            <br>
-            <br>
-            <br> <br> <br> <br> <br><br> <br> <br><br><br><br><br><br>br
+
             <h2><span>Popular Post</span></h2>
             <ul class="spost_nav">
               <li>
