@@ -14,6 +14,7 @@ class HomeView(View):
         jahon_news_list = NewsModel.objects.filter(category__name="Jahon").order_by('-publish_time')[:6],
         jamiyat_news_list=NewsModel.objects.filter(category__name="JAMIYAT").order_by('-publish_time')[:6],
         fan_tkink_news_list=NewsModel.objects.filter(category__name="Fan-txnika").order_by('-publish_time')[:6],
+        arxiv_news_list=NewsModel.objects.filter(category__name="Arxiv").order_by('-publish_time')[:6],
         context = {
             'category_list': category_list,
             'all_news_list': all_news_list,
@@ -21,7 +22,8 @@ class HomeView(View):
             'soport_news_list':soport_news_list,
             'jahon_news_list':jahon_news_list ,
             'jamiyat_news_list':jamiyat_news_list,
-            'fan_tkink_news_list':fan_tkink_news_list
+            'fan_tkink_news_list':fan_tkink_news_list,
+            'arxiv_news_list':arxiv_news_list
         }
         return render(request, 'news/home.html', context)
 
@@ -41,3 +43,9 @@ class NewsDetailView(View):
 def news_detail_page(request, id):
     news = get_object_or_404(News, pk=id)
     return render(request, 'news/news_detail_page.html', {'news': news})
+
+
+class LoginView(View):
+    def get(self, request):
+        context = {}  # Kerak bo'lsa, har qanday kontekst ma'lumotlarini qo'shing
+        return render(request, 'news/login.html', context)
