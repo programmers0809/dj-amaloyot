@@ -13,7 +13,7 @@ class HomeView(View):
         soport_news_list = NewsModel.objects.filter(category__name="Soort").order_by('-publish_time')[:6],
         jahon_news_list = NewsModel.objects.filter(category__name="Jahon").order_by('-publish_time')[:6],
         jamiyat_news_list=NewsModel.objects.filter(category__name="JAMIYAT").order_by('-publish_time')[:6],
-        fan_tkink_news_list=NewsModel.objects.filter(category__name="Fan-txnika").order_by('-publish_time')[:6],
+        fan_tkink_news_list=NewsModel.objects.filter(category__name="Fan-texnika").order_by('-publish_time')[:6],
         arxiv_news_list=NewsModel.objects.filter(category__name="Arxiv").order_by('-publish_time')[:6],
         context = {
             'category_list': category_list,

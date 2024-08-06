@@ -23,22 +23,22 @@
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4">
       <div class="latest_post">
-        <h2><span>So'ngi yangiliklar</span></h2>
-        <div class="latest_post_container">
-          <div id="prev-button"></div>
-          <ul class="latest_postnav">
-            {% for news in all_news_list %}
-            <div class="media">
-              <a href="#" class="media-left">
-                <img alt="#" src="{{ news.image.url }}">
-              </a>
-              <div class="media-body">
-                <a href="#" class="catg_title">{{ news.title }}</a>
-              </div>
-            </div>
-            {% endfor %}
+          <h2><span>So'ngi yanglik</span></h2>
+<div class="latest_post_container">
+  <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+  <ul class="latest_postnav">
+    {% for news in all_news_list %}
+    <div class="media">
+      <a href="pages/single_page.html" class="media-left">
+        <img alt="" src="{{ news.image.url }}"> <!-- Rasm yo'li to'g'ri ko'rsatilganligiga ishonch hosil qiling -->
+      </a>
+      <div class="media-body">
+        <a href="pages/single_page.html" class="catg_title">{{ news.title |truncatewords:15}}</a>
+      </div>
+    </div>
+    {% endfor %}
           </ul>
-          <div id="next-button"></div>
+          <div id="next-button"><i class="fa fa-chevron-down"></i></div>
         </div>
       </div>
     </div>
@@ -211,6 +211,7 @@
           </div>
           <div class="single_post_content_right">
             <ul class="spost_nav">
+                {% for fan_tkink_news in fan_tkink_news_list %}
               <li>
                 <div class="media wow fadeInDown">
                   <a href="pages/news.detail_page.html" class="media-left">
@@ -221,6 +222,8 @@
                   </div>
                 </div>
               </li>
+              
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -250,18 +253,18 @@
           </div>
           <div class="single_post_content_right">
             <ul class="spost_nav">
-             {% comment %} {% for all_news in all_news_list %} {% endcomment %}
-              {% comment %} <li>/ {% endcomment %}
-                {% comment %} <div class="media wow fadeInDown"> {% endcomment %}
-                  {% comment %} <a href="pages/news.detail_page.html" class="media-left"> {% endcomment %}
-                    {% comment %} <img alt="" src="{{news.imge.url}}"> {% endcomment %}
-                  {% comment %} </a> {% endcomment %}
-                  {% comment %} <div class="media-body"> {% endcomment %}
-                    {% comment %} <a href="pages/news.detail_page.html" class="catg_title">{{news.title}}</a> {% endcomment %}
-                  {% comment %} </div> {% endcomment %}
-                {% comment %} </div> {% endcomment %}
-              {% comment %} </li> {% endcomment %}
-            {% comment %} {% endfor %} {% endcomment %}
+             {% for jamiyat_news in jamiyat_news_list %}
+              <li>
+                <div class="media wow fadeInDown">
+                  <a href="pages/news.detail_page.html" class="media-left">
+                    <img alt="" src="{{jamiyat_news.imge.url}}">
+                  </a>
+                  <div class="media-body">
+                    <a href="pages/news.detail_page.html" class="catg_title">{{jamiyat_news.title}}</a>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
             </ul>
           </div>
         </div>
