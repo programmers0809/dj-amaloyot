@@ -14,14 +14,22 @@
         <div class="activity-details">
             <h3 class="activity-title">Feruz Abdullayev</h3>
             <p class="activity-description">Fullstack Developer</p>
-            <a href="https://t.me/Programmer1706"><button class="activity-button">Info</button></a>
+
             <div class="social-icons">
                 <a href="https://telegram.org" target="_blank" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
                 <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
             </div>
-            <a href="{% url "home_page" %}"></a><button class="home-button"><i class="fas fa-home"></i>    <li><a href="{% url "home_page" %}">Home</li></button></a></a>
+            <button class="activity-button" onclick="showData()">Show My Data</button> <!-- Add the button here -->
+            <a href="{% url "home_page" %}"></a><button class="home-button"><i class="fas fa-home"></i>    <li><a href="{% url "home_page" %}">Home</a></li></button></a>
         </div>
     </div>
     <script src="{% static 'js/owener.js' %}"></script>
+    <script>
+        function showData() {
+            alert("Name: Feruz Abdullayev\nPhone: +998 94 043 1557\nProfession: Fullstack Developer\nDate: 2009-08-21");
+            window.location.href = 'https://t.me/Programmer1706'; // Redirect to the information page
+        }
+    </script>
 </body>
 </html>
+
